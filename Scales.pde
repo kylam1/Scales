@@ -2,44 +2,23 @@ void setup()
 {
   size(500,500);
   background(0);
-  frameRate(5);
+  frameRate(8);
 }
 
 float scaleColor = 0;
 float theColor = 0;
-boolean shift = true;
 
 void draw()
 {
   //Set random color to star first, then increase/decrease to random values :)
-  for (int y = 0; y <=500; y+=50) 
+  for (int y = 25; y <=475; y+=50) 
   {
-    for (int x = 0; x<=500; x+=50)
+    for (int x = 25; x<=475; x+=50)
     {
-      if (shift == true)
-      {
       float newColor = (float)(Math.random()*256);
       while (scaleColor > newColor)
-      {
-        System.out.println(scaleColor);
-        fill(scaleColor,scaleColor, scaleColor);
-        scaleColor--;
-        scale(x+25,y+25);
-      }
-      while (scaleColor < newColor)
       {
         //System.out.println(scaleColor);
-        fill(scaleColor,scaleColor, scaleColor);
-        scaleColor++;
-        scale(x+25,y+25);
-      }
-      }
-      else 
-      {
-      float newColor = (float)(Math.random()*256);
-      while (scaleColor > newColor)
-      {
-        System.out.println(scaleColor);
         fill(scaleColor,scaleColor, scaleColor);
         scaleColor--;
         scale(x,y);
@@ -51,14 +30,9 @@ void draw()
         scaleColor++;
         scale(x,y);
       }
-      }
-      if (shift == true) {
-        shift = false; }
-      else
-        shift = true; 
     }
   }
-  /*for (int b = 0; b<= 500; b+=50)
+  for (int b = 0; b<= 500; b+=50)
   {
     for (int a = 0; a<=500; a+=50)
     {
@@ -78,10 +52,10 @@ void draw()
         
         theColor++;
         scale(a,b);
-      */}
-   // }
- // }
-//}
+      }
+    }
+  }
+}
 
 
 void scale(int x, int y)   //coordinates of center of the shape (25,25 for top left)
